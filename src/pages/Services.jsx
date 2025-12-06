@@ -1,10 +1,9 @@
 import styled from 'styled-components'
-
-function Services() {
+import BannerCard from '../components/BannerCard.jsx'
+function Services () {
   return (
     <ServicesStyled>
-      <h1>Nuestros Servicios</h1>
-      <p>Descubre todos los servicios que ofrecemos</p>
+      <BannerCard />
     </ServicesStyled>
   )
 }
@@ -13,7 +12,7 @@ export default Services
 
 const ServicesStyled = styled.div`
   width: 100%;
-  /* height: 100%; */
+  
   display: flex;
   flex-direction: column;
   align-items: center;

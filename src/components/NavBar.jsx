@@ -6,7 +6,7 @@ function NavBar () {
   return (
     <Nav>
       <LogoLink to='/'>
-        <Logo src='/logo-cc.png' alt='Logo CC' />
+        <Logo src='/logo-color-fondo-transparente.png' alt='Logo CC' />
       </LogoLink>
 
       {useContext(AppContext).currentSection !== 'home' ? (
@@ -28,13 +28,13 @@ export default NavBar
 const Nav = styled.nav`
   width: 100%;
   display: flex;
+  height: 60px;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 1rem;
+  padding: 0rem 1.5rem;
   box-sizing: border-box;
-  background: rgba(0,0,0,0.65);
-  backdrop-filter: blur(6px);
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 50%, #eff2f9 100%);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 4px 16px rgba(0, 0, 0, 0.08);
   z-index: 1000;
 `
 
@@ -66,11 +66,12 @@ const Menu = styled.div`
 
 const MenuItem = styled(Link)`
   position: relative;
-  color: #fff;
+  color: #333;
   text-decoration: none;
-  padding: 0.35rem 0.6rem;
-  border-radius: 6px;
-  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
   transition: transform 180ms ease, background 180ms ease, color 180ms ease;
 
   /* subrayado animado */
@@ -79,9 +80,9 @@ const MenuItem = styled(Link)`
     position: absolute;
     left: 10%;
     right: 10%;
-    bottom: 4px;
+    bottom: 2px;
     height: 2px;
-    background: linear-gradient(90deg, rgba(255,255,255,0.0), rgba(255,255,255,0.7), rgba(255,255,255,0.0));
+    background: linear-gradient(90deg, rgba(79, 172, 254, 0), rgba(79, 172, 254, 0.8), rgba(79, 172, 254, 0));
     transform: scaleX(0);
     transform-origin: center;
     transition: transform 220ms ease;
@@ -89,7 +90,8 @@ const MenuItem = styled(Link)`
 
   &:hover {
     transform: translateY(-2px);
-    background: rgba(255,255,255,0.10);
+    background: linear-gradient(135deg, rgba(79, 172, 254, 0.1), rgba(100, 200, 255, 0.05));
+    color: #0d47a1;
   }
 
   &:hover::after {

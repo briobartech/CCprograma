@@ -29,9 +29,12 @@ function App () {
 export default App
 
 const AppStyled = styled.div`
+  .NavBarSection {
+  height: 60px;
+  }
   position: relative;
   width: 100%;
-  min-width: 100%;
+  min-width: 100%;height: 100vh;
   display: block;
   flex-direction: column;
   justify-content: center;
@@ -41,16 +44,18 @@ const AppStyled = styled.div`
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url(${props => 
-      props.$section === 'about' ? '/BG.jpg' :
-      props.$section === 'services' ? '/BG.jpg' :
-      props.$section === 'contact' ? '/BG.jpg' :
-      '/BG3.jpg'
-    });
+    background-image: url(${props =>
+      props.$section === 'about'
+        ? '/BG.jpg'
+        : props.$section === 'services'
+        ? '/BG.jpg'
+        : props.$section === 'contact'
+        ? '/BG.jpg'
+        : '/BG3.jpg'});
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    opacity: ${props => props.$bgOpacity || 0.55};
+    opacity: ${props => props.$bgOpacity || 1};
     transition: opacity 0.4s ease, background-image 0.4s ease-in-out;
     z-index: -1;
   }
@@ -59,11 +64,11 @@ const AppStyled = styled.div`
 const MainSectionStyled = styled.section`
   width: 100%;
   height: calc(100vh - 120px);
-  
+
   > * {
     animation: fadeIn 0.4s ease-in-out;
   }
-  
+
   @keyframes fadeIn {
     from {
       opacity: 0;

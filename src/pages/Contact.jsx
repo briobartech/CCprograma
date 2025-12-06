@@ -4,7 +4,8 @@ import fb from '/icons/1x/fb.png'
 import xtw from '/icons/1x/x.png'
 import yt from '/icons/1x/yt.png'
 import ws from '/icons/1x/ws.png'
-
+import { useContext } from 'react'
+import { AppContext } from '../context/AppContext.jsx'
 // Configuración de redes sociales - solo muestra las que tienen URL
 const socialMedia = {
   instagram: 'https://instagram.com/camaracomerciotupungato',
@@ -25,11 +26,11 @@ const socialIcons = {
 function Contact() {
   // Filtrar solo las redes sociales con URL configurada
   const activeSocials = Object.entries(socialMedia).filter(([key, url]) => url)
-
+  const palette = useContext(AppContext).palette
   return (
     <ContactStyled>
       <CardWrapper>
-        <Card>
+        <Card $palette={palette}>
           <CardContent>
             <Title>Contactanos</Title>
             <List>
