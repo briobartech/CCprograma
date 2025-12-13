@@ -123,11 +123,15 @@ const AboutStyled = styled.div`
   min-height: calc(100vh - 60px);
 
   @media (max-width: 768px) {
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 0.75rem;
   }
 
   @media (max-width: 480px) {
-    padding: 1rem 0.75rem;
+    padding: 1rem 0.5rem;
+  }
+
+  @media (max-width: 375px) {
+    padding: 0.75rem 0.5rem;
   }
 `
 
@@ -139,11 +143,15 @@ const Container = styled.div`
   gap: 3rem;
 
   @media (max-width: 768px) {
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   @media (max-width: 480px) {
-    gap: 1.5rem;
+    gap: 1rem;
+  }
+
+  @media (max-width: 375px) {
+    gap: 0.75rem;
   }
 `
 
@@ -154,17 +162,18 @@ const Section = styled.section`
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 
   @media (max-width: 768px) {
-    padding: 2rem;
+    padding: 1.5rem 1.25rem;
     border-radius: 10px;
   }
 
   @media (max-width: 480px) {
-    padding: 1.5rem 1rem;
+    padding: 1.25rem 1rem;
     border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
   }
 
   @media (max-width: 375px) {
-    padding: 1.25rem 0.75rem;
+    padding: 1rem 0.75rem;
   }
 `
 
@@ -176,8 +185,16 @@ const Title = styled.h1`
   font-weight: 700;
   letter-spacing: -0.02em;
 
+  @media (max-width: 768px) {
+    font-size: 1.85rem;
+  }
+
   @media (max-width: 480px) {
-    font-size: 1.75rem;
+    font-size: 1.65rem;
+  }
+
+  @media (max-width: 375px) {
+    font-size: 1.5rem;
   }
 `
 
@@ -189,13 +206,20 @@ const SectionTitle = styled.h2`
   border-bottom: 3px solid #51a76fff;
   padding-bottom: 0.5rem;
 
+  @media (max-width: 768px) {
+    font-size: 1.4rem;
+    margin-bottom: 1.25rem;
+  }
+
   @media (max-width: 480px) {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
     margin-bottom: 1rem;
+    border-bottom-width: 2px;
+    padding-bottom: 0.4rem;
   }
 
   @media (max-width: 375px) {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
   }
 `
 
@@ -204,19 +228,26 @@ const Text = styled.p`
   line-height: 1.8;
   color: #444;
   margin: 0 0 1rem 0;
-  text-align: justify;
+  text-align: left;
 
   &:last-child {
     margin-bottom: 0;
   }
 
-  @media (max-width: 480px) {
-    font-size: 0.95rem;
+  @media (max-width: 768px) {
+    font-size: 1rem;
     line-height: 1.7;
   }
 
+  @media (max-width: 480px) {
+    font-size: 0.925rem;
+    line-height: 1.65;
+    margin-bottom: 0.75rem;
+  }
+
   @media (max-width: 375px) {
-    font-size: 0.9rem;
+    font-size: 0.875rem;
+    line-height: 1.6;
   }
 `
 
