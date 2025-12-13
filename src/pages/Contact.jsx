@@ -1,11 +1,8 @@
 import styled from 'styled-components'
-import ig from '/CCprograma/icons/1x/ig.png'
-import fb from '/CCprograma/icons/1x/fb.png'
-import xtw from '/CCprograma/icons/1x/x.png'
-import yt from '/CCprograma/icons/1x/yt.png'
-import ws from '/CCprograma/icons/1x/ws.png'
 import { useContext } from 'react'
 import { AppContext } from '../context/AppContext.jsx'
+
+const BASE_URL = import.meta.env.BASE_URL
 // Configuración de redes sociales - solo muestra las que tienen URL
 const socialMedia = {
   instagram: 'https://instagram.com/camaracomerciotupungato',
@@ -16,11 +13,11 @@ const socialMedia = {
 }
 
 const socialIcons = {
-  instagram: { icon: ig, label: 'Instagram' },
-  facebook: { icon: fb, label: 'Facebook' },
-  twitter: { icon: xtw, label: 'Twitter/X' },
-  youtube: { icon: yt, label: 'YouTube' },
-  whatsapp: { icon: ws, label: 'WhatsApp' }
+  instagram: { icon: `${BASE_URL}icons/1x/ig.png`, label: 'Instagram' },
+  facebook: { icon: `${BASE_URL}icons/1x/fb.png`, label: 'Facebook' },
+  twitter: { icon: `${BASE_URL}icons/1x/x.png`, label: 'Twitter/X' },
+  youtube: { icon: `${BASE_URL}icons/1x/yt.png`, label: 'YouTube' },
+  whatsapp: { icon: `${BASE_URL}icons/1x/ws.png`, label: 'WhatsApp' }
 }
 
 function Contact() {

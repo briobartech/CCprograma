@@ -1,21 +1,17 @@
 import IconCard from './IconCard'
-import premium from '/CCprograma/icons/premium.svg'
-import newItem from '/CCprograma/icons/new.svg'
-import content from '/CCprograma/icons/content-marketing.svg'
-import newspaper from '/CCprograma/icons/newspaper-news.svg'
-import aboutUs from '/CCprograma/icons/about-dot-me.svg'
-import contact from '/CCprograma/icons/contact.svg'
 import styled from 'styled-components'
+
+const BASE_URL = import.meta.env.BASE_URL
 
 function IconsWidget () {
   return (
     <IconsWidgetStyled>
-      <IconCard icon={newItem} label='Nuevo' />
-      <IconCard icon={newspaper} label='Informate' />
-      <IconCard icon={content} label='Contenido' to='/content'/>
-      <IconCard icon={contact} label='Contactános' to='/contact' />
-      <IconCard icon={aboutUs} label='Sobre nosotros' to='/about' />
-      <IconCard icon={premium} label='Suscríbete' to='/services' />
+      <IconCard icon={`${BASE_URL}icons/new.svg`} label='Nuevo' />
+      <IconCard icon={`${BASE_URL}icons/newspaper-news.svg`} label='Informate' />
+      <IconCard icon={`${BASE_URL}icons/content-marketing.svg`} label='Contenido' to='/content'/>
+      <IconCard icon={`${BASE_URL}icons/contact.svg`} label='Contactános' to='/contact' />
+      <IconCard icon={`${BASE_URL}icons/about-dot-me.svg`} label='Sobre nosotros' to='/about' />
+      <IconCard icon={`${BASE_URL}icons/premium.svg`} label='Suscríbete' to='/services' />
     </IconsWidgetStyled>
   )
 }
