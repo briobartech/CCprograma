@@ -1,10 +1,10 @@
 import IconCard from './IconCard'
-import premium from '/icons/premium.svg'
-import newItem from '/icons/new.svg'
-import content from '/icons/content-marketing.svg'
-import newspaper from '/icons/newspaper-news.svg'
-import aboutUs from '/icons/about-dot-me.svg'
-import contact from '/icons/contact.svg'
+import premium from '/CCprograma/icons/premium.svg'
+import newItem from '/CCprograma/icons/new.svg'
+import content from '/CCprograma/icons/content-marketing.svg'
+import newspaper from '/CCprograma/icons/newspaper-news.svg'
+import aboutUs from '/CCprograma/icons/about-dot-me.svg'
+import contact from '/CCprograma/icons/contact.svg'
 import styled from 'styled-components'
 
 function IconsWidget () {
