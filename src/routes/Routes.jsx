@@ -3,6 +3,7 @@ import Home from '../pages/Home.jsx'
 import About from '../pages/About.jsx'
 import Services from '../pages/Services.jsx'
 import Contact from '../pages/Contact.jsx'
+import Content from '../pages/Content.jsx'
 import App from '../App.jsx'
 
 // Definición de rutas de la aplicación
@@ -26,6 +27,10 @@ export const router = createBrowserRouter([
       {
         path: 'contact',
         element: <Contact />
+      },
+      {
+        path: 'content',
+        element: <Content />
       }
     ]
   }

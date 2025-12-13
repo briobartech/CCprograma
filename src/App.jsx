@@ -30,19 +30,22 @@ export default App
 
 const AppStyled = styled.div`
   .NavBarSection {
-  height: 60px;
+    height: 60px;
   }
   position: relative;
   width: 100%;
-  min-width: 100%;height: 100vh;
+  min-width: 100%;
+  min-height: 100vh;
   display: block;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+  
   &::before {
     content: '';
-    position: absolute;
+    position: fixed;
     inset: 0;
     background-image: url(${props =>
       props.$section === 'about'
@@ -63,7 +66,7 @@ const AppStyled = styled.div`
 
 const MainSectionStyled = styled.section`
   width: 100%;
-  height: calc(100vh - 120px);
+  min-height: calc(100vh - 60px);
 
   > * {
     animation: fadeIn 0.4s ease-in-out;

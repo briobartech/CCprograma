@@ -1,21 +1,44 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { AppContext } from '../context/AppContext.jsx'
+
 function NavBar () {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const currentSection = useContext(AppContext).currentSection;
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <Nav>
-      <LogoLink to='/'>
+      <LogoLink to='/' onClick={closeMenu}>
         <Logo src='/logo-color-fondo-transparente.png' alt='Logo CC' />
       </LogoLink>
 
-      {useContext(AppContext).currentSection !== 'home' ? (
-        <Menu>
-          <MenuItem to='/'>Home</MenuItem>
-          <MenuItem to='/about'>About</MenuItem>
-          <MenuItem to='/services'>Services</MenuItem>
-          <MenuItem to='/contact'>Contact</MenuItem>
-        </Menu>
+      {currentSection !== 'home' ? (
+        <>
+          <BurgerButton onClick={toggleMenu} $isOpen={isMenuOpen}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </BurgerButton>
+
+          <Menu $isOpen={isMenuOpen}>
+            <MenuItem to='/' onClick={closeMenu}>Inicio</MenuItem>
+            <MenuItem to='/about' onClick={closeMenu}>Nosotros</MenuItem>
+            <MenuItem to='/services' onClick={closeMenu}>Servicios</MenuItem>
+            <MenuItem to='/contact' onClick={closeMenu}>Contacto</MenuItem>
+            <MenuItem to='/content' onClick={closeMenu}>Noticias</MenuItem>
+          </Menu>
+
+          {isMenuOpen && <Overlay onClick={closeMenu} />}
+        </>
       ) : null}
     </Nav>
   )
@@ -36,12 +59,14 @@ const Nav = styled.nav`
   background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 50%, #eff2f9 100%);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 4px 16px rgba(0, 0, 0, 0.08);
   z-index: 1000;
+  position: relative;
 `
 
 const LogoLink = styled(Link)`
   display: inline-flex;
   align-items: center;
   text-decoration: none;
+  z-index: 1002;
 `
 
 const Logo = styled.img`
@@ -57,11 +82,92 @@ const Logo = styled.img`
   }
 `
 
+const BurgerButton = styled.button`
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1002;
+
+  span {
+    width: 100%;
+    height: 3px;
+    background: #333;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+  }
+
+  ${props => props.$isOpen && `
+    span:nth-child(1) {
+      transform: rotate(45deg) translateY(10px);
+    }
+    span:nth-child(2) {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    span:nth-child(3) {
+      transform: rotate(-45deg) translateY(-10px);
+    }
+  `}
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
+`
+
+const Overlay = styled.div`
+  display: none;
+  
+  @media (max-width: 768px) {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    animation: fadeIn 0.3s ease;
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
+`
+
 const Menu = styled.div`
   margin-left: auto;
   display: flex;
   gap: 1rem;
   align-items: center;
+
+  @media (max-width: 768px) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    flex-direction: column;
+    background: linear-gradient(180deg, #ffffff 0%, #f5f7fa 100%);
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+    padding: 80px 20px 20px;
+    gap: 0.5rem;
+    align-items: stretch;
+    transform: ${props => props.$isOpen ? 'translateX(0)' : 'translateX(100%)'};
+    transition: transform 0.3s ease;
+    z-index: 1001;
+  }
 `
 
 const MenuItem = styled(Link)`
@@ -96,5 +202,18 @@ const MenuItem = styled(Link)`
 
   &:hover::after {
     transform: scaleX(1);
+  }
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+    font-size: 1rem;
+    
+    &:hover {
+      transform: translateX(5px);
+    }
+
+    &::after {
+      display: none;
+    }
   }
 `;

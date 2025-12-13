@@ -12,7 +12,7 @@ function IconsWidget () {
     <IconsWidgetStyled>
       <IconCard icon={newItem} label='Nuevo' />
       <IconCard icon={newspaper} label='Informate' />
-      <IconCard icon={content} label='Contenido' />
+      <IconCard icon={content} label='Contenido' to='/content'/>
       <IconCard icon={contact} label='Contactános' to='/contact' />
       <IconCard icon={aboutUs} label='Sobre nosotros' to='/about' />
       <IconCard icon={premium} label='Suscríbete' to='/services' />

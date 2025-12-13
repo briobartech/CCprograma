@@ -89,6 +89,21 @@ const ContactStyled = styled.div`
   justify-content: center;
   padding: 2rem;
   gap: 1.5rem;
+
+  @media (max-width: 768px) {
+    padding: 1.5rem 1rem;
+    gap: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1rem 0.75rem;
+    gap: 0.75rem;
+  }
+
+  @media (max-width: 375px) {
+    padding: 0.75rem 0.5rem;
+    gap: 0.5rem;
+  }
 `
 
 const CardWrapper = styled.div`
@@ -106,6 +121,23 @@ const Card = styled.div`
   border-radius: 16px;
   box-shadow: 0 18px 40px rgba(0,0,0,0.25);
   padding: 3rem;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 2rem;
+    border-radius: 12px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1.5rem 1rem;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  }
+
+  @media (max-width: 375px) {
+    padding: 1.25rem 0.75rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
 `
 
 const CardContent = styled.div`
@@ -124,6 +156,32 @@ const SocialsWrapper = styled.div`
     transform: translateY(0);
     pointer-events: auto;
   }
+
+  @media (max-width: 768px) {
+    opacity: 1;
+    pointer-events: auto;
+    margin-top: 1rem;
+    gap: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    margin-top: 0.75rem;
+    gap: 0.75rem;
+    
+    img {
+      width: 28px !important;
+      height: 28px !important;
+    }
+  }
+
+  @media (max-width: 375px) {
+    gap: 0.5rem;
+    
+    img {
+      width: 26px !important;
+      height: 26px !important;
+    }
+  }
 `
 
 const Title = styled.h2`
@@ -136,6 +194,14 @@ const Title = styled.h2`
 const List = styled.div`
   display: grid;
   gap: 0.75rem 1rem;
+
+  @media (max-width: 480px) {
+    gap: 0.65rem;
+  }
+
+  @media (max-width: 375px) {
+    gap: 0.5rem;
+  }
 `
 
 const Item = styled.div`
@@ -143,15 +209,41 @@ const Item = styled.div`
   grid-template-columns: 140px 1fr;
   align-items: center;
   gap: 0.5rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 120px 1fr;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
 `
 
 const Label = styled.span`
   color: #444;
   font-weight: 600;
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 375px) {
+    font-size: 0.85rem;
+  }
 `
 
 const Value = styled.span`
   color: #111;
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+    word-break: break-word;
+  }
+
+  @media (max-width: 375px) {
+    font-size: 0.85rem;
+  }
 `
 
 const Actions = styled.div`
@@ -175,5 +267,16 @@ const ActionLink = styled.a`
     box-shadow: 0 12px 28px rgba(6, 68, 32, 0.28);
     background: #95d5b2; /* slightly darker pastel on hover */
     color: #033019;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+    border-radius: 8px;
+  }
+
+  @media (max-width: 375px) {
+    padding: 0.45rem 0.65rem;
+    font-size: 0.85rem;
   }
 `

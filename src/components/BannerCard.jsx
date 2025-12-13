@@ -31,6 +31,18 @@ const Card = styled.div`
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
   background: #fff;
   padding: 0;
+  
+  @media (max-width: 768px) {
+    max-width: 100%;
+    height: auto;
+    min-height: 500px;
+    border-radius: 12px;
+  }
+  
+  @media (max-width: 480px) {
+    border-radius: 8px;
+    min-height: 400px;
+  }
 `
 
 const BannerSection = styled.div`
@@ -46,4 +58,12 @@ const ContentSection = styled.div`
   background: #fff;
   padding: 2rem;
   overflow-y: auto;
+  
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 1rem;
+  }
 `
