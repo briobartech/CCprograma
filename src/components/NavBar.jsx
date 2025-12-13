@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { useContext, useState } from 'react'
 import { AppContext } from '../context/AppContext.jsx'
+import logo from '/logo-color-fondo-transparente.png'
 
 function NavBar () {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,7 +19,7 @@ function NavBar () {
   return (
     <Nav>
       <LogoLink to='/' onClick={closeMenu}>
-        <Logo src='/logo-color-fondo-transparente.png' alt='Logo CC' />
+        <Logo src={logo} alt='Logo CC' />
       </LogoLink>
 
       {currentSection !== 'home' ? (

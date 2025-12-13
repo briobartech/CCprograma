@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import IconsWidget from './IconsWidget'
+import bannerDefault from '/banner.jpeg'
 
 /**
  * TextOverlayImageCard
@@ -11,7 +12,7 @@ import IconsWidget from './IconsWidget'
  *  - height: CSS height (px, rem, etc.)
  */
 const TextOverlayImageCard = ({
-  src = '/banner.jpeg',
+  src = bannerDefault,
   alt = 'Imagen',
   text = 'CÁMARA DE COMERCIO: TUPUNGATO',
   height = '26rem',

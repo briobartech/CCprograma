@@ -4,6 +4,8 @@ import { AppContext } from './context/AppContext.jsx'
 import NavBar from './components/NavBar.jsx'
 import './App.css'
 import styled from 'styled-components'
+import BG from '/BG.jpg'
+import BG3 from '/BG3.jpg'
 
 function App () {
   const location = useLocation()
@@ -49,12 +51,12 @@ const AppStyled = styled.div`
     inset: 0;
     background-image: url(${props =>
       props.$section === 'about'
-        ? '/BG.jpg'
+        ? BG
         : props.$section === 'services'
-        ? '/BG.jpg'
+        ? BG
         : props.$section === 'contact'
-        ? '/BG.jpg'
-        : '/BG3.jpg'});
+        ? BG
+        : BG3});
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
