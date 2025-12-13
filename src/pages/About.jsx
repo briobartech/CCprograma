@@ -160,20 +160,24 @@ const Section = styled.section`
   padding: 2.5rem;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  margin: 0 0.25rem;
 
   @media (max-width: 768px) {
     padding: 1.5rem 1.25rem;
     border-radius: 10px;
+    margin: 0 0.5rem;
   }
 
   @media (max-width: 480px) {
     padding: 1.25rem 1rem;
     border-radius: 8px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    margin: 0 0.5rem;
   }
 
   @media (max-width: 375px) {
     padding: 1rem 0.75rem;
+    margin: 0 0.5rem;
   }
 `
 
@@ -255,14 +259,21 @@ const GridSection = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+  margin: 0 0.25rem;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    margin: 0 0.5rem;
   }
 
   @media (max-width: 480px) {
     gap: 1rem;
+    margin: 0 0.5rem;
+  }
+
+  @media (max-width: 375px) {
+    margin: 0 0.5rem;
   }
 `
 
