@@ -63,7 +63,7 @@ function Services () {
 export default Services
 
 const ServicesStyled = styled.div`
-  width: 100%;
+  width: 95%;
   
   display: flex;
   flex-direction: column;
