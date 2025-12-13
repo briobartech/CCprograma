@@ -34,6 +34,8 @@ export const router = createBrowserRouter([
       }
     ]
   }
-])
+], {
+  basename: '/CCprograma'
+})
 
 export default router
