@@ -115,7 +115,7 @@ function About () {
 export default About
 
 const AboutStyled = styled.div`
-  width: 100%;
+  width: 95%;
   display: flex;
   flex-direction: column;
   align-items: center;
